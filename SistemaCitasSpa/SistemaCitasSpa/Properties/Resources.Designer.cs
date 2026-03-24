@@ -63,6 +63,26 @@ namespace SistemaCitasSpa.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0b5fe6c742b1ace77afce52d4367361d {
+            get {
+                object obj = ResourceManager.GetObject("0b5fe6c742b1ace77afce52d4367361d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7892611325bee589b89e9a1def4ebc8b {
+            get {
+                object obj = ResourceManager.GetObject("7892611325bee589b89e9a1def4ebc8b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cabina_duo_de_spa_del {
             get {
                 object obj = ResourceManager.GetObject("cabina-duo-de-spa-del", resourceCulture);
@@ -76,6 +96,36 @@ namespace SistemaCitasSpa.Properties {
         internal static System.Drawing.Bitmap cabina_duo_de_spa_del1 {
             get {
                 object obj = ResourceManager.GetObject("cabina-duo-de-spa-del1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2026_03_21_095408 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2026-03-21 095408", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_cute_arrow_hand_drawn_cartoon_png_image_4236009 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-cute-arrow-hand-drawn-cartoon-png-image_4236009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap robot_trees_green_sustainability_ai_1024x724_7 {
+            get {
+                object obj = ResourceManager.GetObject("robot-trees-green-sustainability-ai-1024x724-7", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

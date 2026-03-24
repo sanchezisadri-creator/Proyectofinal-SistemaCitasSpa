@@ -28,86 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             label1 = new Label();
-            label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             pictureBox1 = new PictureBox();
+            label2 = new Label();
+            button2 = new Button();
+            button1 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.PeachPuff;
-            label1.BorderStyle = BorderStyle.Fixed3D;
-            label1.FlatStyle = FlatStyle.Popup;
-            label1.Font = new Font("Baskerville Old Face", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DarkOrange;
-            label1.Location = new Point(12, 416);
+            label1.BackColor = Color.Linen;
+            label1.BorderStyle = BorderStyle.FixedSingle;
+            label1.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(0, 431);
             label1.Name = "label1";
-            label1.Size = new Size(169, 25);
+            label1.Size = new Size(187, 19);
             label1.TabIndex = 0;
-            label1.Text = " Spa La Maravilla";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.BurlyWood;
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Font = new Font("Baskerville Old Face", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(237, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(309, 36);
-            label2.TabIndex = 1;
-            label2.Text = "Seleccione una opción";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.BurlyWood;
-            button1.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(305, 151);
-            button1.Name = "button1";
-            button1.Size = new Size(165, 40);
-            button1.TabIndex = 2;
-            button1.Text = "Agendar Cita";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.BurlyWood;
-            button2.Font = new Font("Baskerville Old Face", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(315, 197);
-            button2.Name = "button2";
-            button2.Size = new Size(146, 31);
-            button2.TabIndex = 3;
-            button2.Text = "Ver Citas";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.BurlyWood;
-            button3.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(341, 234);
-            button3.Name = "button3";
-            button3.Size = new Size(93, 31);
-            button3.TabIndex = 4;
-            button3.Text = "Salir";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            label1.Text = " Spa La Maravilla (✿ ͡ᵔ ͜ʖ ͡ᵔ)";
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.cabina_duo_de_spa_del1;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(800, 450);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.BlanchedAlmond;
+            label2.BorderStyle = BorderStyle.FixedSingle;
+            label2.FlatStyle = FlatStyle.Popup;
+            label2.Font = new Font("Baskerville Old Face", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(165, 94);
+            label2.Name = "label2";
+            label2.Size = new Size(518, 52);
+            label2.TabIndex = 1;
+            label2.Text = " ✿Seleccione una opción✿";
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.BlanchedAlmond;
+            button2.FlatAppearance.BorderColor = Color.Maroon;
+            button2.FlatAppearance.BorderSize = 3;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(369, 283);
+            button2.Name = "button2";
+            button2.Size = new Size(106, 46);
+            button2.TabIndex = 3;
+            button2.Text = "Ver Citas";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.BlanchedAlmond;
+            button1.FlatAppearance.BorderColor = Color.Maroon;
+            button1.FlatAppearance.BorderSize = 3;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(330, 219);
+            button1.Name = "button1";
+            button1.Size = new Size(176, 58);
+            button1.TabIndex = 2;
+            button1.Text = "Agendar Cita";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.BlanchedAlmond;
+            button3.FlatAppearance.BorderColor = Color.Maroon;
+            button3.FlatAppearance.BorderSize = 3;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(637, 392);
+            button3.Name = "button3";
+            button3.Size = new Size(151, 46);
+            button3.TabIndex = 4;
+            button3.Text = "SALIR";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // Form2
             // 
@@ -131,10 +141,10 @@
         #endregion
 
         private Label label1;
-        private Label label2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
         private PictureBox pictureBox1;
+        private Label label2;
+        private Button button2;
+        private Button button1;
+        private Button button3;
     }
 }
