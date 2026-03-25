@@ -219,7 +219,7 @@
             label7.FlatStyle = FlatStyle.Popup;
             label7.Font = new Font("Matura MT Script Capitals", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Snow;
-            label7.Location = new Point(172, 89);
+            label7.Location = new Point(174, 89);
             label7.Name = "label7";
             label7.Size = new Size(335, 24);
             label7.TabIndex = 20;

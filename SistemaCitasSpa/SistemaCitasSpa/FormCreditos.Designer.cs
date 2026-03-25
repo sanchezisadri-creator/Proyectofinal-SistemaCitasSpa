@@ -48,7 +48,7 @@
             // 
             // timerCreditos
             // 
-            timerCreditos.Interval = 30;
+            timerCreditos.Interval = 33;
             timerCreditos.Tick += timer1_Tick;
             // 
             // FormCreditos
@@ -64,7 +64,7 @@
             ForeColor = SystemColors.Info;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormCreditos";
-            Opacity = 0.9D;
+            Opacity = 0.8D;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormCreditos";

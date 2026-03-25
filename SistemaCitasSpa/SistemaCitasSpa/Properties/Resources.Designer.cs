@@ -113,6 +113,26 @@ namespace SistemaCitasSpa.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap manuel_moreno_DGa0LQ0yDPc_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("manuel-moreno-DGa0LQ0yDPc-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manuel_moreno_DGa0LQ0yDPc_unsplash1 {
+            get {
+                object obj = ResourceManager.GetObject("manuel-moreno-DGa0LQ0yDPc-unsplash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngtree_cute_arrow_hand_drawn_cartoon_png_image_4236009 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-cute-arrow-hand-drawn-cartoon-png-image_4236009", resourceCulture);

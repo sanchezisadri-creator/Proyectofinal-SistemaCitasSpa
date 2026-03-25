@@ -28,123 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
-            button2 = new Button();
             button1 = new Button();
+            button2 = new Button();
             button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            listBox1 = new ListBox();
+            button4 = new Button();
             SuspendLayout();
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(12, 405);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 33);
+            button1.TabIndex = 0;
+            button1.Text = "VOLVER";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(12, 301);
+            button2.Name = "button2";
+            button2.Size = new Size(124, 42);
+            button2.TabIndex = 1;
+            button2.Text = "Agregar Cita";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 349);
+            button3.Name = "button3";
+            button3.Size = new Size(194, 57);
+            button3.TabIndex = 2;
+            button3.Text = "Mostrar Citas";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(551, 140);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(175, 27);
+            textBox1.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Linen;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(0, 431);
+            label1.Location = new Point(549, 117);
             label1.Name = "label1";
-            label1.Size = new Size(187, 19);
-            label1.TabIndex = 0;
-            label1.Text = " Spa La Maravilla (✿ ͡ᵔ ͜ʖ ͡ᵔ)";
+            label1.Size = new Size(177, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Nombre / Servicio / Hora";
             // 
-            // pictureBox1
+            // listBox1
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(800, 450);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new Point(549, 267);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(244, 164);
+            listBox1.TabIndex = 5;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // label2
+            // button4
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.BlanchedAlmond;
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.FlatStyle = FlatStyle.Popup;
-            label2.Font = new Font("Baskerville Old Face", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(165, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(518, 52);
-            label2.TabIndex = 1;
-            label2.Text = " ✿Seleccione una opción✿";
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.BlanchedAlmond;
-            button2.FlatAppearance.BorderColor = Color.Maroon;
-            button2.FlatAppearance.BorderSize = 3;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(369, 283);
-            button2.Name = "button2";
-            button2.Size = new Size(106, 46);
-            button2.TabIndex = 3;
-            button2.Text = "Ver Citas";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.BlanchedAlmond;
-            button1.FlatAppearance.BorderColor = Color.Maroon;
-            button1.FlatAppearance.BorderSize = 3;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Baskerville Old Face", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(330, 219);
-            button1.Name = "button1";
-            button1.Size = new Size(176, 58);
-            button1.TabIndex = 2;
-            button1.Text = "Agendar Cita";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.BlanchedAlmond;
-            button3.FlatAppearance.BorderColor = Color.Maroon;
-            button3.FlatAppearance.BorderSize = 3;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Baskerville Old Face", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(637, 392);
-            button3.Name = "button3";
-            button3.Size = new Size(151, 46);
-            button3.TabIndex = 4;
-            button3.Text = "SALIR";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button4.Location = new Point(142, 301);
+            button4.Name = "button4";
+            button4.Size = new Size(129, 41);
+            button4.TabIndex = 6;
+            button4.Text = "Eliminar Cita";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackgroundImage = Properties.Resources.manuel_moreno_DGa0LQ0yDPc_unsplash1;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
+            Controls.Add(listBox1);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
             Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private PictureBox pictureBox1;
-        private Label label2;
-        private Button button2;
         private Button button1;
+        private Button button2;
         private Button button3;
+        private TextBox textBox1;
+        private Label label1;
+        private ListBox listBox1;
+        private Button button4;
     }
 }

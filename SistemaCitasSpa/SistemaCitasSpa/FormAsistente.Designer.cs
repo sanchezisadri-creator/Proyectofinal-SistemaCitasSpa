@@ -49,11 +49,11 @@
             labelChat.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelChat.ForeColor = SystemColors.ActiveCaptionText;
             labelChat.ImageAlign = ContentAlignment.TopLeft;
-            labelChat.Location = new Point(12, 20);
+            labelChat.Location = new Point(12, 9);
             labelChat.Name = "labelChat";
-            labelChat.Size = new Size(276, 108);
+            labelChat.Size = new Size(276, 119);
             labelChat.TabIndex = 0;
-            labelChat.Text = "Hola,  soy Cool ,\r\ntu asistente virtual\r\n\r\nde iformacion rapida ¿En qué puedo ayudarte?";
+            labelChat.Text = "Hola,  soy Relax , ( ͡ᵔ ͜ʖ ͡ᵔ)\r\ntu asistente virtual de informacion rapida.\r\n\r\n¿En qué puedo ayudarte?";
             // 
             // button1
             // 
