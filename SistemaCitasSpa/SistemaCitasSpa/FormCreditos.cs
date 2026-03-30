@@ -31,6 +31,31 @@ namespace SistemaCitasSpa
             labelCreditos.Top = this.Height;
             timerCreditos.Start();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timerCreditos.Stop();
+            this.Close();
+
+        }
+
+        private void labelCreditos_Click(object sender, EventArgs e)
+        {
+            timerCreditos.Stop();
+            this.Close();
+        }
+
+        private void FormCreditos_Click(object sender, EventArgs e)
+        {
+            timerCreditos.Stop();
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            timerCreditos.Stop();
+            this.Close();
+        }
     }
 }
 

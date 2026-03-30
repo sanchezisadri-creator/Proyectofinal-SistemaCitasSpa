@@ -83,6 +83,16 @@ namespace SistemaCitasSpa.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap attractive_african_woman_enjoying_face_massage_spa_salon_1_min_1024x683 {
+            get {
+                object obj = ResourceManager.GetObject("attractive-african-woman-enjoying-face-massage-spa-salon-1-min-1024x683", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cabina_duo_de_spa_del {
             get {
                 object obj = ResourceManager.GetObject("cabina-duo-de-spa-del", resourceCulture);
@@ -106,6 +116,26 @@ namespace SistemaCitasSpa.Properties {
         internal static System.Drawing.Bitmap Captura_de_pantalla_2026_03_21_095408 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2026-03-21 095408", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_button {
+            get {
+                object obj = ResourceManager.GetObject("close-button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

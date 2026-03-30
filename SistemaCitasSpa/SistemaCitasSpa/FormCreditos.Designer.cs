@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCreditos));
             labelCreditos = new Label();
             timerCreditos = new System.Windows.Forms.Timer(components);
+            button1 = new Button();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // labelCreditos
@@ -41,15 +43,31 @@
             labelCreditos.ForeColor = SystemColors.Control;
             labelCreditos.Location = new Point(22, 21);
             labelCreditos.Name = "labelCreditos";
-            labelCreditos.Size = new Size(401, 270);
+            labelCreditos.Size = new Size(401, 325);
             labelCreditos.TabIndex = 0;
             labelCreditos.Text = resources.GetString("labelCreditos.Text");
             labelCreditos.TextAlign = ContentAlignment.TopCenter;
+            labelCreditos.Click += labelCreditos_Click;
             // 
             // timerCreditos
             // 
             timerCreditos.Interval = 33;
             timerCreditos.Tick += timer1_Tick;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = Properties.Resources.close;
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.ForeColor = Color.Transparent;
+            button1.Location = new Point(418, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(31, 33);
+            button1.TabIndex = 1;
+            toolTip1.SetToolTip(button1, "Cerrar");
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // FormCreditos
             // 
@@ -58,7 +76,8 @@
             BackColor = SystemColors.Control;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(450, 300);
+            ClientSize = new Size(450, 370);
+            Controls.Add(button1);
             Controls.Add(labelCreditos);
             DoubleBuffered = true;
             ForeColor = SystemColors.Info;
@@ -70,6 +89,7 @@
             Text = "FormCreditos";
             TopMost = true;
             Load += FormCreditos_Load;
+            Click += FormCreditos_Click;
             ResumeLayout(false);
         }
 
@@ -77,5 +97,7 @@
 
         private Label labelCreditos;
         private System.Windows.Forms.Timer timerCreditos;
+        private Button button1;
+        private ToolTip toolTip1;
     }
 }

@@ -22,6 +22,7 @@
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 ventana = new Form2();
+            ventana.WindowState = FormWindowState.Maximized;
             ventana.Show();
             this.Hide();
         }
@@ -109,10 +110,10 @@
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             FormCreditos f = new FormCreditos();
+
 
             f.StartPosition = FormStartPosition.Manual;
 
@@ -163,6 +164,16 @@
             {
                 this.WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

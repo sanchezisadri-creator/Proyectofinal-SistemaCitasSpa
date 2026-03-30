@@ -131,11 +131,14 @@ porque creemos que tu bienestar es nuestra mayor prioridad.
   <metadata name="timerCreditos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>167, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA7AAAAJACAIAAAA7Oh04AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAA/7JJREFUeF7svQeYHNd1pl1d4dat1DnnybHDdM/05IiciZwziMRMMOeccxIJBjAi
+        DAAACwwBP0AiyAAA/7JJREFUeF7svQeYHNd1pl1d4dat1DnnybHDdM/05IiciZwziMRMMOeccxIJBjAi
         EIEEmJNESZZEmaIkW1bw2pbtddr1b2/wv/b+6/Uu/+fcW11dXdUzACiIomTw+Z5iT011TwOYvvXWqe98
         h5EE9qzOoETkEJEDCwyId2DeIXIMiGUwx0gch1lWYhyYYSTGITtYieOoZJ4/FU12vCIINSWjivSdiFMQ
         pwkVOXnWkHn/V0NsTam8wyy604k4VeQUxCqIVUXOJfJuLLhEXhNYl8BZ5Cay7//NyvxvYZb9SDgYgVSx

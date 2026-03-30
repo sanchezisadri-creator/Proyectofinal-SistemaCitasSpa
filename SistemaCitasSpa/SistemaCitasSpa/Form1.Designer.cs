@@ -43,17 +43,18 @@
             label7 = new Label();
             panel1 = new Panel();
             tableLayoutPanel7 = new TableLayoutPanel();
-            buttonMaximizar = new Button();
             button5 = new Button();
             button6 = new Button();
+            buttonMaximizar = new Button();
             tableLayoutPanel6 = new TableLayoutPanel();
-            button7 = new Button();
+            label8 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
             timer1 = new System.Windows.Forms.Timer(components);
             tableLayoutPanel4 = new TableLayoutPanel();
             tableLayoutPanel5 = new TableLayoutPanel();
+            toolTip1 = new ToolTip(components);
             panel1.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
@@ -95,6 +96,7 @@
             button2.Text = "Salir";
             button2.UseVisualStyleBackColor = false;
             button2.UseWaitCursor = true;
+            button2.Click += button2_Click_1;
             // 
             // label3
             // 
@@ -238,6 +240,7 @@
             panel1.Size = new Size(762, 31);
             panel1.TabIndex = 21;
             panel1.UseWaitCursor = true;
+            panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
             // 
             // tableLayoutPanel7
@@ -248,9 +251,9 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.Controls.Add(buttonMaximizar, 1, 0);
             tableLayoutPanel7.Controls.Add(button5, 2, 0);
             tableLayoutPanel7.Controls.Add(button6, 0, 0);
+            tableLayoutPanel7.Controls.Add(buttonMaximizar, 1, 0);
             tableLayoutPanel7.Location = new Point(637, -1);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 1;
@@ -258,20 +261,6 @@
             tableLayoutPanel7.Size = new Size(118, 30);
             tableLayoutPanel7.TabIndex = 26;
             tableLayoutPanel7.UseWaitCursor = true;
-            // 
-            // buttonMaximizar
-            // 
-            buttonMaximizar.BackColor = Color.Black;
-            buttonMaximizar.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonMaximizar.ForeColor = SystemColors.ButtonHighlight;
-            buttonMaximizar.Location = new Point(42, 3);
-            buttonMaximizar.Name = "buttonMaximizar";
-            buttonMaximizar.Size = new Size(33, 24);
-            buttonMaximizar.TabIndex = 25;
-            buttonMaximizar.Text = "☐";
-            buttonMaximizar.UseVisualStyleBackColor = false;
-            buttonMaximizar.UseWaitCursor = true;
-            buttonMaximizar.Click += buttonMaximizar_Click;
             // 
             // button5
             // 
@@ -283,6 +272,7 @@
             button5.Size = new Size(34, 24);
             button5.TabIndex = 22;
             button5.Text = "x";
+            toolTip1.SetToolTip(button5, "Cerrar");
             button5.UseVisualStyleBackColor = false;
             button5.UseWaitCursor = true;
             button5.Click += button5_Click;
@@ -296,16 +286,32 @@
             button6.Name = "button6";
             button6.Size = new Size(33, 17);
             button6.TabIndex = 23;
+            toolTip1.SetToolTip(button6, "Minimizar");
             button6.UseVisualStyleBackColor = false;
             button6.UseWaitCursor = true;
             button6.Click += button6_Click;
+            // 
+            // buttonMaximizar
+            // 
+            buttonMaximizar.BackColor = Color.Black;
+            buttonMaximizar.Font = new Font("Showcard Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonMaximizar.ForeColor = SystemColors.ButtonHighlight;
+            buttonMaximizar.Location = new Point(42, 3);
+            buttonMaximizar.Name = "buttonMaximizar";
+            buttonMaximizar.Size = new Size(33, 24);
+            buttonMaximizar.TabIndex = 25;
+            buttonMaximizar.Text = "☐";
+            toolTip1.SetToolTip(buttonMaximizar, "Windows State Normal");
+            buttonMaximizar.UseVisualStyleBackColor = false;
+            buttonMaximizar.UseWaitCursor = true;
+            buttonMaximizar.Click += buttonMaximizar_Click;
             // 
             // tableLayoutPanel6
             // 
             tableLayoutPanel6.BackColor = Color.Transparent;
             tableLayoutPanel6.ColumnCount = 1;
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel6.Controls.Add(button7, 0, 0);
+            tableLayoutPanel6.Controls.Add(label8, 0, 0);
             tableLayoutPanel6.Location = new Point(3, -2);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 1;
@@ -314,18 +320,18 @@
             tableLayoutPanel6.TabIndex = 25;
             tableLayoutPanel6.UseWaitCursor = true;
             // 
-            // button7
+            // label8
             // 
-            button7.BackColor = Color.Black;
-            button7.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.ForeColor = SystemColors.ButtonHighlight;
-            button7.Location = new Point(3, 3);
-            button7.Name = "button7";
-            button7.Size = new Size(66, 24);
-            button7.TabIndex = 24;
-            button7.Text = "U-S-S™";
-            button7.UseVisualStyleBackColor = false;
-            button7.UseWaitCursor = true;
+            label8.BackColor = Color.Black;
+            label8.Font = new Font("Showcard Gothic", 10F);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(3, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(66, 29);
+            label8.TabIndex = 26;
+            label8.Text = "U-S-S™";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            label8.UseWaitCursor = true;
             // 
             // tableLayoutPanel1
             // 
@@ -434,7 +440,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "Form1";
-            Text = "U.S.S";
+            Text = "4";
             UseWaitCursor = true;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
@@ -469,7 +475,6 @@
         private Panel panel1;
         private Button button5;
         private Button button6;
-        private Button button7;
         private Button buttonMaximizar;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
@@ -479,5 +484,7 @@
         private TableLayoutPanel tableLayoutPanel5;
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel7;
+        private ToolTip toolTip1;
+        private Label label8;
     }
 }
