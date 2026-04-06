@@ -1,4 +1,6 @@
-﻿namespace SistemaCitasSpa
+﻿using System.Media;
+
+namespace SistemaCitasSpa
 {
     public partial class Form1 : Form
     {
@@ -15,6 +17,8 @@
         public Form1()
         {
             InitializeComponent();
+
+            this.DoubleBuffered = true;
             this.MouseDown += Form1_MouseDown;
             this.MouseDown += Form1_MouseDown;
         }
@@ -22,9 +26,10 @@
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 ventana = new Form2();
+            ventana.Owner = this;
             ventana.WindowState = FormWindowState.Maximized;
             ventana.Show();
-            this.Hide();
+            this.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,6 +39,8 @@
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MusicaGlobal.Iniciar();
+
             button1.Left = -200;
             button3.Left = -200;
             button4.Left = -250;
@@ -174,6 +181,25 @@
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonMute_Click(object sender, EventArgs e)
+        {
+            if (MusicaGlobal.estaSonando)
+            {
+                MusicaGlobal.Detener();
+                buttonMute.Text = "🔇";
+            }
+            else
+            {
+                MusicaGlobal.Iniciar();
+                buttonMute.Text = "🔊";
+            }
+        }
+
+        private void trackBarVolumen_Scroll(object sender, EventArgs e)
+        {
+            MusicaGlobal.Volumen(trackBarVolumen.Value);
         }
     }
 }

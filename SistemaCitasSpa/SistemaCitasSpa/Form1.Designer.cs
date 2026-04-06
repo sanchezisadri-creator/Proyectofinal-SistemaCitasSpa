@@ -48,6 +48,8 @@
             buttonMaximizar = new Button();
             tableLayoutPanel6 = new TableLayoutPanel();
             label8 = new Label();
+            trackBarVolumen = new TrackBar();
+            buttonMute = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -58,6 +60,7 @@
             panel1.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)trackBarVolumen).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -232,7 +235,9 @@
             // 
             panel1.BackColor = Color.MistyRose;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(buttonMute);
             panel1.Controls.Add(tableLayoutPanel7);
+            panel1.Controls.Add(trackBarVolumen);
             panel1.Controls.Add(tableLayoutPanel6);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -333,6 +338,31 @@
             label8.TextAlign = ContentAlignment.MiddleCenter;
             label8.UseWaitCursor = true;
             // 
+            // trackBarVolumen
+            // 
+            trackBarVolumen.AutoSize = false;
+            trackBarVolumen.BackColor = Color.LightSalmon;
+            trackBarVolumen.Location = new Point(78, 3);
+            trackBarVolumen.Maximum = 100;
+            trackBarVolumen.Name = "trackBarVolumen";
+            trackBarVolumen.Size = new Size(83, 25);
+            trackBarVolumen.TabIndex = 27;
+            trackBarVolumen.UseWaitCursor = true;
+            trackBarVolumen.Value = 50;
+            trackBarVolumen.Scroll += trackBarVolumen_Scroll;
+            // 
+            // buttonMute
+            // 
+            buttonMute.BackColor = Color.LightSalmon;
+            buttonMute.Location = new Point(167, -1);
+            buttonMute.Name = "buttonMute";
+            buttonMute.Size = new Size(30, 31);
+            buttonMute.TabIndex = 26;
+            buttonMute.Text = "🔊";
+            buttonMute.UseVisualStyleBackColor = false;
+            buttonMute.UseWaitCursor = true;
+            buttonMute.Click += buttonMute_Click;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.Anchor = AnchorStyles.Top;
@@ -426,7 +456,7 @@
             BackColor = Color.Black;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(762, 464);
+            ClientSize = new Size(762, 472);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel4);
             Controls.Add(tableLayoutPanel2);
@@ -446,6 +476,7 @@
             panel1.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)trackBarVolumen).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -486,5 +517,7 @@
         private TableLayoutPanel tableLayoutPanel7;
         private ToolTip toolTip1;
         private Label label8;
+        private Button buttonMute;
+        private TrackBar trackBarVolumen;
     }
 }

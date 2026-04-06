@@ -43,8 +43,8 @@ namespace SistemaCitasSpa
         {
             textBoxID.Clear();
             textBoxPaciente.Clear();
-            comboBoxDentista.SelectedIndex = -1;    
-            comboBoxTerapeuta.SelectedIndex = -1;   
+            comboBoxDentista.SelectedIndex = -1;
+            comboBoxTerapeuta.SelectedIndex = -1;
             comboBoxServicio.SelectedIndex = -1;
         }
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -53,10 +53,23 @@ namespace SistemaCitasSpa
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         List<string> citas = new List<string>();
+        int contadorID = 1;
+
+        bool panelAbierto = true;
+
+        int indiceImagen = 0;
+        List<Image> imagenes = new List<Image>();
+
+        int velocidadPanel = 10;
+        int alturaMaxima = 278;
+        int alturaMinima = 30;
+        bool expandiendo = false;
         public Form2()
         {
             InitializeComponent();
-            this.MouseDown += Form2_MouseDown;
+
+            this.DoubleBuffered = true;
+
             this.MouseDown += Form2_MouseDown;
         }
 
@@ -70,15 +83,15 @@ namespace SistemaCitasSpa
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 ventana = new Form1();
-            ventana.Show();
-            this.Hide();
+            this.Owner.Show();
+            this.Close(); ;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form1 menu = new Form1();
-            menu.Show();
+            this.Owner.Show();
+            this.Owner.WindowState = FormWindowState.Maximized;
+            this.Owner.Refresh();
             this.Close();
         }
 
@@ -90,17 +103,25 @@ namespace SistemaCitasSpa
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            // Aquí ponemos los nombres de los dentistas
+
             comboBoxDentista.Items.Add("Dr. Juan Pérez");
             comboBoxDentista.Items.Add("Dra. María López");
             comboBoxDentista.Items.Add("Dr. Carlos Ramírez");
             comboBoxDentista.Items.Add("Dra. Ana Martínez");
 
-            // Aquí ponemos los nombres de los terapeutas
+
             comboBoxTerapeuta.Items.Add("Terapeuta Luis Gómez");
             comboBoxTerapeuta.Items.Add("Terapeuta Carla Díaz");
             comboBoxTerapeuta.Items.Add("Terapeuta Miguel Torres");
             comboBoxTerapeuta.Items.Add("Terapeuta Sofía Ruiz");
+
+            imagenes.Add(Image.FromFile("Imagenes/imagen1.jpg"));
+            imagenes.Add(Image.FromFile("Imagenes/imagen2.jpg"));
+            imagenes.Add(Image.FromFile("Imagenes/imagen3.jpg"));
+
+            pictureBox1.Image = imagenes[0];
+
+            timer1.Start();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -144,17 +165,38 @@ namespace SistemaCitasSpa
 
         private void buttonAgregar_Click(object sender, EventArgs e)
         {
-            if (textBoxID.Text == "" ||
-        textBoxPaciente.Text == "" ||
-        comboBoxDentista.Text == "" ||
-        comboBoxTerapeuta.Text == "" ||
-        comboBoxServicio.Text == "")
+            if (textBoxPaciente.Text == "" ||
+         comboBoxDentista.Text == "" ||
+         comboBoxTerapeuta.Text == "" ||
+         comboBoxServicio.Text == "")
             {
                 MessageBox.Show("Complete todos los campos obligatorios");
                 return;
             }
 
             DateTime fechaHora = dateTimePickerFecha.Value.Date + dateTimePickerHora.Value.TimeOfDay;
+
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    string fechaExistente = row.Cells[2].Value.ToString();
+                    string horaExistente = row.Cells[3].Value.ToString();
+                    string dentistaExistente = row.Cells[4].Value.ToString();
+
+                    string nuevaFecha = dateTimePickerFecha.Value.ToShortDateString();
+                    string nuevaHora = dateTimePickerHora.Value.ToShortTimeString();
+
+                    if (fechaExistente == nuevaFecha &&
+                        horaExistente == nuevaHora &&
+                        dentistaExistente == comboBoxDentista.Text)
+                    {
+                        MessageBox.Show("Este dentista ya tiene una cita a esa hora");
+                        return;
+                    }
+                }
+            }
 
             if (fechaHora < DateTime.Now)
             {
@@ -168,20 +210,11 @@ namespace SistemaCitasSpa
             string tiempoRestante = CalcularTiempoRestante(fechaHora);
             string estado = CalcularEstado(fechaHora);
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == textBoxID.Text)
-                {
-                    MessageBox.Show("El ID ya existe");
-                    return;
-                }
-            }
-
             string dentista = comboBoxDentista.Text;
             string terapeuta = comboBoxTerapeuta.Text;
 
             dataGridView1.Rows.Add(
-                textBoxID.Text,
+                contadorID,
                 textBoxPaciente.Text,
                 dateTimePickerFecha.Value.ToShortDateString(),
                 dateTimePickerHora.Value.ToShortTimeString(),
@@ -192,7 +225,7 @@ namespace SistemaCitasSpa
                 tiempoRestante,
                 estado
             );
-
+            contadorID++;
             LimpiarCampos();
         }
 
@@ -214,7 +247,10 @@ namespace SistemaCitasSpa
             {
                 MessageBox.Show("ID no encontrado");
             }
+
+            LimpiarCampos();
         }
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -224,10 +260,174 @@ namespace SistemaCitasSpa
 
                 textBoxID.Text = fila.Cells[0].Value?.ToString();
                 textBoxPaciente.Text = fila.Cells[1].Value?.ToString();
-                comboBoxDentista.Text = fila.Cells[4].Value?.ToString();   
+                comboBoxDentista.Text = fila.Cells[4].Value?.ToString();
                 comboBoxServicio.Text = fila.Cells[5].Value?.ToString();
                 comboBoxTerapeuta.Text = fila.Cells[7].Value?.ToString();
             }
+        }
+
+        private void buttonMute_Click(object sender, EventArgs e)
+        {
+            if (MusicaGlobal.estaSonando)
+            {
+                MusicaGlobal.Detener();
+                buttonMute.Text = "🔇";
+            }
+            else
+            {
+                MusicaGlobal.Iniciar();
+                buttonMute.Text = "🔊";
+            }
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            if (textBoxID.Text == "")
+            {
+                MessageBox.Show("Seleccione una cita para editar");
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[0].Value != null &&
+                    row.Cells[0].Value.ToString() == textBoxID.Text)
+                {
+                    // 🔍 VALIDAR SI NO HUBO CAMBIOS
+                    if (
+                        row.Cells[1].Value?.ToString() == textBoxPaciente.Text &&
+                        row.Cells[2].Value?.ToString() == dateTimePickerFecha.Value.ToShortDateString() &&
+                        row.Cells[3].Value?.ToString() == dateTimePickerHora.Value.ToShortTimeString() &&
+                        row.Cells[4].Value?.ToString() == comboBoxDentista.Text &&
+                        row.Cells[5].Value?.ToString() == comboBoxServicio.Text &&
+                        row.Cells[7].Value?.ToString() == comboBoxTerapeuta.Text
+                    )
+                    {
+                        MessageBox.Show("No se realizaron cambios");
+                        return;
+                    }
+
+                    DateTime fechaHora = dateTimePickerFecha.Value.Date + dateTimePickerHora.Value.TimeOfDay;
+
+                    string servicio = comboBoxServicio.Text;
+                    int duracion = CalcularDuracion(servicio);
+
+                    string tiempoRestante = CalcularTiempoRestante(fechaHora);
+                    string estado = CalcularEstado(fechaHora);
+
+                    row.Cells[1].Value = textBoxPaciente.Text;
+                    row.Cells[2].Value = dateTimePickerFecha.Value.ToShortDateString();
+                    row.Cells[3].Value = dateTimePickerHora.Value.ToShortTimeString();
+                    row.Cells[4].Value = comboBoxDentista.Text;
+                    row.Cells[5].Value = servicio;
+                    row.Cells[6].Value = duracion + " min";
+                    row.Cells[7].Value = comboBoxTerapeuta.Text;
+                    row.Cells[8].Value = tiempoRestante;
+                    row.Cells[9].Value = estado;
+
+                    MessageBox.Show("Cita actualizada correctamente");
+                    LimpiarCampos();
+                    return;
+                }
+            }
+
+            MessageBox.Show("ID no encontrado");
+        }
+
+        private void buttonToggle_Click(object sender, EventArgs e)
+        {
+            timerPanel.Start();
+
+            if (panelAbierto)
+            {
+                expandiendo = false;
+                buttonToggle.Text = "▼";
+            }
+            else
+            {
+                expandiendo = true;
+                buttonToggle.Text = "▲";
+            }
+        }
+
+        private void timerPanel_Tick(object sender, EventArgs e)
+        {
+            if (expandiendo)
+            {
+                if (panelGrid.Height < alturaMaxima)
+                {
+                    panelGrid.Height += velocidadPanel;
+                }
+                else
+                {
+                    timerPanel.Stop();
+                    panelAbierto = true;
+                }
+            }
+            else
+            {
+                if (panelGrid.Height > alturaMinima)
+                {
+                    panelGrid.Height -= velocidadPanel;
+                }
+                else
+                {
+                    timerPanel.Stop();
+                    panelAbierto = false;
+                }
+            }
+        }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.Filter = "Archivo CSV (*.csv)|*.csv";
+            guardar.Title = "Guardar citas";
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                StringBuilder sb = new StringBuilder();
+
+
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    sb.Append(dataGridView1.Columns[i].HeaderText);
+
+                    if (i < dataGridView1.Columns.Count - 1)
+                        sb.Append(",");
+                }
+                sb.AppendLine();
+
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                        {
+                            sb.Append(row.Cells[i].Value?.ToString());
+
+                            if (i < dataGridView1.Columns.Count - 1)
+                                sb.Append(",");
+                        }
+                        sb.AppendLine();
+                    }
+                }
+
+                System.IO.File.WriteAllText(guardar.FileName, sb.ToString());
+
+                MessageBox.Show("Citas exportadas correctamente");
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            indiceImagen++;
+
+            if (indiceImagen >= imagenes.Count)
+                indiceImagen = 0;
+
+            pictureBox1.Image = imagenes[indiceImagen];
         }
     }
 }
