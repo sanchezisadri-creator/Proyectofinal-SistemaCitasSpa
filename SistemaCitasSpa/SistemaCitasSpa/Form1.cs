@@ -201,6 +201,11 @@ namespace SistemaCitasSpa
         {
             MusicaGlobal.Volumen(trackBarVolumen.Value);
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

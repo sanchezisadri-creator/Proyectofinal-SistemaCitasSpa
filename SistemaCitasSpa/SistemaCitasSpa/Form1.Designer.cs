@@ -42,14 +42,14 @@
             button4 = new Button();
             label7 = new Label();
             panel1 = new Panel();
+            buttonMute = new Button();
             tableLayoutPanel7 = new TableLayoutPanel();
             button5 = new Button();
             button6 = new Button();
             buttonMaximizar = new Button();
+            trackBarVolumen = new TrackBar();
             tableLayoutPanel6 = new TableLayoutPanel();
             label8 = new Label();
-            trackBarVolumen = new TrackBar();
-            buttonMute = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -59,8 +59,8 @@
             toolTip1 = new ToolTip(components);
             panel1.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarVolumen).BeginInit();
+            tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -115,6 +115,7 @@
             label3.TabIndex = 12;
             label3.Text = "Urban Serenity";
             label3.UseWaitCursor = true;
+            label3.Click += label3_Click;
             // 
             // label1
             // 
@@ -248,6 +249,18 @@
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
             // 
+            // buttonMute
+            // 
+            buttonMute.BackColor = Color.LightSalmon;
+            buttonMute.Location = new Point(167, -1);
+            buttonMute.Name = "buttonMute";
+            buttonMute.Size = new Size(30, 31);
+            buttonMute.TabIndex = 26;
+            buttonMute.Text = "🔊";
+            buttonMute.UseVisualStyleBackColor = false;
+            buttonMute.UseWaitCursor = true;
+            buttonMute.Click += buttonMute_Click;
+            // 
             // tableLayoutPanel7
             // 
             tableLayoutPanel7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -311,6 +324,19 @@
             buttonMaximizar.UseWaitCursor = true;
             buttonMaximizar.Click += buttonMaximizar_Click;
             // 
+            // trackBarVolumen
+            // 
+            trackBarVolumen.AutoSize = false;
+            trackBarVolumen.BackColor = Color.LightSalmon;
+            trackBarVolumen.Location = new Point(78, 3);
+            trackBarVolumen.Maximum = 100;
+            trackBarVolumen.Name = "trackBarVolumen";
+            trackBarVolumen.Size = new Size(83, 25);
+            trackBarVolumen.TabIndex = 27;
+            trackBarVolumen.UseWaitCursor = true;
+            trackBarVolumen.Value = 50;
+            trackBarVolumen.Scroll += trackBarVolumen_Scroll;
+            // 
             // tableLayoutPanel6
             // 
             tableLayoutPanel6.BackColor = Color.Transparent;
@@ -337,31 +363,6 @@
             label8.Text = "U-S-S™";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             label8.UseWaitCursor = true;
-            // 
-            // trackBarVolumen
-            // 
-            trackBarVolumen.AutoSize = false;
-            trackBarVolumen.BackColor = Color.LightSalmon;
-            trackBarVolumen.Location = new Point(78, 3);
-            trackBarVolumen.Maximum = 100;
-            trackBarVolumen.Name = "trackBarVolumen";
-            trackBarVolumen.Size = new Size(83, 25);
-            trackBarVolumen.TabIndex = 27;
-            trackBarVolumen.UseWaitCursor = true;
-            trackBarVolumen.Value = 50;
-            trackBarVolumen.Scroll += trackBarVolumen_Scroll;
-            // 
-            // buttonMute
-            // 
-            buttonMute.BackColor = Color.LightSalmon;
-            buttonMute.Location = new Point(167, -1);
-            buttonMute.Name = "buttonMute";
-            buttonMute.Size = new Size(30, 31);
-            buttonMute.TabIndex = 26;
-            buttonMute.Text = "🔊";
-            buttonMute.UseVisualStyleBackColor = false;
-            buttonMute.UseWaitCursor = true;
-            buttonMute.Click += buttonMute_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -475,8 +476,8 @@
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)trackBarVolumen).EndInit();
+            tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

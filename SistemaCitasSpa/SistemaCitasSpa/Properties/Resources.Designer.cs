@@ -143,6 +143,26 @@ namespace SistemaCitasSpa.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap huum_K65M3GbRYq8_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("huum-K65M3GbRYq8-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap huum_K65M3GbRYq8_unsplash1 {
+            get {
+                object obj = ResourceManager.GetObject("huum-K65M3GbRYq8-unsplash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap manuel_moreno_DGa0LQ0yDPc_unsplash {
             get {
                 object obj = ResourceManager.GetObject("manuel-moreno-DGa0LQ0yDPc-unsplash", resourceCulture);

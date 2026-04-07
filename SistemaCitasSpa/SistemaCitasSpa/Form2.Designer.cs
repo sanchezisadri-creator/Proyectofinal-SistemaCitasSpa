@@ -73,6 +73,8 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             pictureBox1 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            label6 = new Label();
+            panel1 = new Panel();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelGrid.SuspendLayout();
@@ -80,6 +82,7 @@
             panel2.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -108,7 +111,7 @@
             // 
             // buttonMute
             // 
-            buttonMute.BackColor = Color.LightCoral;
+            buttonMute.BackColor = Color.BurlyWood;
             buttonMute.Location = new Point(75, 3);
             buttonMute.Name = "buttonMute";
             buttonMute.Size = new Size(35, 27);
@@ -252,7 +255,7 @@
             // 
             button1.BackColor = Color.Moccasin;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(85, 299);
+            button1.Location = new Point(9, 324);
             button1.Name = "button1";
             button1.Size = new Size(104, 40);
             button1.TabIndex = 0;
@@ -262,7 +265,7 @@
             // 
             // textBoxID
             // 
-            textBoxID.Location = new Point(7, 436);
+            textBoxID.Location = new Point(27, 132);
             textBoxID.Name = "textBoxID";
             textBoxID.Size = new Size(10, 27);
             textBoxID.TabIndex = 4;
@@ -279,7 +282,7 @@
             buttonAgregar.BackColor = Color.Moccasin;
             buttonAgregar.FlatAppearance.BorderColor = Color.Yellow;
             buttonAgregar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonAgregar.Location = new Point(3, 254);
+            buttonAgregar.Location = new Point(5, 228);
             buttonAgregar.Name = "buttonAgregar";
             buttonAgregar.Size = new Size(135, 40);
             buttonAgregar.TabIndex = 6;
@@ -290,7 +293,7 @@
             // dateTimePickerFecha
             // 
             dateTimePickerFecha.Format = DateTimePickerFormat.Short;
-            dateTimePickerFecha.Location = new Point(85, 32);
+            dateTimePickerFecha.Location = new Point(67, 177);
             dateTimePickerFecha.Name = "dateTimePickerFecha";
             dateTimePickerFecha.Size = new Size(110, 27);
             dateTimePickerFecha.TabIndex = 7;
@@ -298,7 +301,7 @@
             // dateTimePickerHora
             // 
             dateTimePickerHora.Format = DateTimePickerFormat.Time;
-            dateTimePickerHora.Location = new Point(85, 65);
+            dateTimePickerHora.Location = new Point(56, 143);
             dateTimePickerHora.Name = "dateTimePickerHora";
             dateTimePickerHora.ShowUpDown = true;
             dateTimePickerHora.Size = new Size(118, 27);
@@ -308,7 +311,7 @@
             // 
             comboBoxServicio.FormattingEnabled = true;
             comboBoxServicio.Items.AddRange(new object[] { "MASAJE  ", "MANICURA", "FACIAL " });
-            comboBoxServicio.Location = new Point(89, 103);
+            comboBoxServicio.Location = new Point(85, 36);
             comboBoxServicio.Name = "comboBoxServicio";
             comboBoxServicio.Size = new Size(127, 28);
             comboBoxServicio.TabIndex = 10;
@@ -317,7 +320,7 @@
             // 
             buttonEliminar.BackColor = Color.Moccasin;
             buttonEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonEliminar.Location = new Point(3, 205);
+            buttonEliminar.Location = new Point(150, 271);
             buttonEliminar.Name = "buttonEliminar";
             buttonEliminar.Size = new Size(128, 43);
             buttonEliminar.TabIndex = 12;
@@ -329,7 +332,7 @@
             // 
             comboBoxDentista.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDentista.FormattingEnabled = true;
-            comboBoxDentista.Location = new Point(47, 171);
+            comboBoxDentista.Location = new Point(56, 70);
             comboBoxDentista.Name = "comboBoxDentista";
             comboBoxDentista.Size = new Size(156, 28);
             comboBoxDentista.TabIndex = 13;
@@ -338,7 +341,7 @@
             // 
             comboBoxTerapeuta.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTerapeuta.FormattingEnabled = true;
-            comboBoxTerapeuta.Location = new Point(101, 137);
+            comboBoxTerapeuta.Location = new Point(96, 109);
             comboBoxTerapeuta.Name = "comboBoxTerapeuta";
             comboBoxTerapeuta.Size = new Size(151, 28);
             comboBoxTerapeuta.TabIndex = 14;
@@ -360,7 +363,7 @@
             Fecha.AutoSize = true;
             Fecha.BackColor = Color.Moccasin;
             Fecha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Fecha.Location = new Point(3, 41);
+            Fecha.Location = new Point(3, 184);
             Fecha.Name = "Fecha";
             Fecha.Size = new Size(49, 20);
             Fecha.TabIndex = 16;
@@ -371,7 +374,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Moccasin;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 70);
+            label2.Location = new Point(3, 147);
             label2.Name = "label2";
             label2.Size = new Size(43, 20);
             label2.TabIndex = 17;
@@ -382,7 +385,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Moccasin;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(3, 106);
+            label3.Location = new Point(8, 42);
             label3.Name = "label3";
             label3.Size = new Size(71, 20);
             label3.TabIndex = 18;
@@ -393,7 +396,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Moccasin;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(0, 141);
+            label4.Location = new Point(3, 112);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 19;
@@ -404,7 +407,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Moccasin;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(0, 175);
+            label5.Location = new Point(8, 73);
             label5.Name = "label5";
             label5.Size = new Size(36, 20);
             label5.TabIndex = 20;
@@ -414,7 +417,7 @@
             // 
             buttonEditar.BackColor = Color.Moccasin;
             buttonEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonEditar.Location = new Point(137, 205);
+            buttonEditar.Location = new Point(146, 228);
             buttonEditar.Name = "buttonEditar";
             buttonEditar.Size = new Size(132, 40);
             buttonEditar.TabIndex = 21;
@@ -425,8 +428,9 @@
             // panelGrid
             // 
             panelGrid.Controls.Add(dataGridView1);
+            panelGrid.Controls.Add(textBoxID);
             panelGrid.Dock = DockStyle.Bottom;
-            panelGrid.Location = new Point(0, 436);
+            panelGrid.Location = new Point(0, 464);
             panelGrid.Name = "panelGrid";
             panelGrid.Size = new Size(961, 278);
             panelGrid.TabIndex = 22;
@@ -452,7 +456,7 @@
             // 
             buttonExportar.BackColor = Color.Moccasin;
             buttonExportar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonExportar.Location = new Point(147, 254);
+            buttonExportar.Location = new Point(5, 274);
             buttonExportar.Name = "buttonExportar";
             buttonExportar.Size = new Size(136, 40);
             buttonExportar.TabIndex = 24;
@@ -465,21 +469,22 @@
             flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Controls.Add(buttonToggle);
-            flowLayoutPanel1.Location = new Point(8, 384);
+            flowLayoutPanel1.Location = new Point(8, 412);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(52, 46);
             flowLayoutPanel1.TabIndex = 25;
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(buttonExportar);
             panel2.Controls.Add(button1);
-            panel2.Controls.Add(buttonAgregar);
-            panel2.Controls.Add(buttonEditar);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(buttonEliminar);
+            panel2.Controls.Add(buttonAgregar);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(buttonEditar);
             panel2.Controls.Add(textBoxPaciente);
+            panel2.Controls.Add(buttonExportar);
             panel2.Controls.Add(Fecha);
             panel2.Controls.Add(dateTimePickerFecha);
             panel2.Controls.Add(comboBoxDentista);
@@ -490,24 +495,25 @@
             panel2.Controls.Add(dateTimePickerHora);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(comboBoxServicio);
-            panel2.Location = new Point(12, 39);
+            panel2.Location = new Point(3, 39);
             panel2.Name = "panel2";
-            panel2.Size = new Size(283, 339);
+            panel2.Size = new Size(308, 367);
             panel2.TabIndex = 27;
             // 
             // flowLayoutPanel2
             // 
+            flowLayoutPanel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             flowLayoutPanel2.Controls.Add(pictureBox1);
-            flowLayoutPanel2.Location = new Point(458, 180);
+            flowLayoutPanel2.Location = new Point(632, 310);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(485, 242);
+            flowLayoutPanel2.Size = new Size(317, 148);
             flowLayoutPanel2.TabIndex = 28;
             // 
             // pictureBox1
             // 
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(482, 238);
+            pictureBox1.Size = new Size(314, 145);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 29;
             pictureBox1.TabStop = false;
@@ -517,6 +523,26 @@
             timer1.Interval = 3000;
             timer1.Tick += timer1_Tick;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(29, 4);
+            label6.Name = "label6";
+            label6.Size = new Size(215, 23);
+            label6.TabIndex = 29;
+            label6.Text = "DISFRUTA DE NOSOTROS";
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            panel1.BackColor = Color.Moccasin;
+            panel1.Controls.Add(label6);
+            panel1.Location = new Point(676, 280);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 27);
+            panel1.TabIndex = 30;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -524,13 +550,13 @@
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(961, 714);
+            ClientSize = new Size(961, 742);
+            Controls.Add(panel1);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(panel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panelGrid);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(textBoxID);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
             Text = "Form2";
@@ -539,13 +565,15 @@
             tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelGrid.ResumeLayout(false);
+            panelGrid.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -592,5 +620,7 @@
         private FlowLayoutPanel flowLayoutPanel2;
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private Label label6;
+        private Panel panel1;
     }
 }
